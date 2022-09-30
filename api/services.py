@@ -68,5 +68,5 @@ class FetchWeatherData:
             computed_temperatures = self.compute_temperature(cleaned_data)
             data['data'] = computed_temperatures
         else:
-            data['message'] = response_data['error']['message']
+            data['error'] = response_data['error']
         return data

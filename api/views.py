@@ -25,4 +25,4 @@ class GetLocationWeatherAPIView(APIView):
         if data['status_code'] == 200:
             return Response(data['data'], status=status.HTTP_200_OK)
         else:
-            return Response({'message': data['message']}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(data['error'], status=status.HTTP_400_BAD_REQUEST)
