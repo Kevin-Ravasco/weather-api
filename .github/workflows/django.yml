@@ -2,9 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ master, frontend ]
-#  pull_request:
-#    branches: [ master, frontend ]
+    branches: [ master ]
   pull_request_target:
     types: [ opened ]
   workflow_dispatch:
@@ -40,10 +38,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Start Redis v4
-        uses: superchargejs/redis-github-action@1.1.0
-        with:
-          redis-version: '4'
       - name: Run Migrations
         env:
           DEBUG: False

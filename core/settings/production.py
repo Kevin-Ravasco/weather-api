@@ -16,3 +16,5 @@ if os.getenv('GITHUB_WORKFLOW'):
     }
 
 ADMINS = [('Kevin O', 'okevin182@gmail.com')]
+
+# More production configuration goes here...
