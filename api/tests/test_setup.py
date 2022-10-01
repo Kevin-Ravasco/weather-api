@@ -5,12 +5,13 @@ from rest_framework.test import APITestCase
 
 from django.test import Client
 
+from api.services import FetchWeatherData
+
 
 class TestSetup(APITestCase):
     """
     Base setup for our test cases
     """
-
     @classmethod
     def setUpTestData(cls) -> None:
         cls.client = Client()
@@ -21,10 +22,9 @@ class TestSetup(APITestCase):
                       f"&q={cls.valid_city}&days={cls.days}"
 
         # set up successful mock request
-
         # this is the json received for city Nairobi, for 2 days in
         # an actual api call we use it as our expected dict
-        expected_dict = {
+        external_api_response_dict = {
             "location": {
                 "name": "Nairobi",
                 "region": "Nairobi Area",
@@ -128,12 +128,23 @@ class TestSetup(APITestCase):
             }
         }
         cls.successful_mock = mock.Mock()
-        cls.successful_mock.json.return_value = expected_dict
+        cls.successful_mock.json.return_value = external_api_response_dict
         cls.successful_mock.status_code = 200
+
+        # our expected response after being computed should be this
+        # with response value from external api being the expected_dict
+        cls.expected_successful_response_dict = {
+            "maximum": 30.4,
+            "minimum": 14.1,
+            "average": 20.4,
+            "median": 22.35
+        }
 
         # set up unsuccessful mock
         cls.unsuccessful_mock = mock.Mock()
-        cls.unsuccessful_expected_dict = {'error': {'message': 'Invalid city name'}, 'status_code': 400}
+        cls.unsuccessful_expected_response_dict = {'error': {'message': 'Invalid city name'}, 'status_code': 400}
         cls.unsuccessful_mock.json.return_value = cls.unsuccessful_expected_dict
         cls.unsuccessful_mock.status_code = 400
+
+        cls.weather_service = FetchWeatherData(cls.valid_city, cls.days)
         return

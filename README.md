@@ -115,5 +115,5 @@ Generate the coverage report by running:
 coverage html
 ```
 
-The test coverage is currently at 95%
+The test coverage is currently at 100%
 

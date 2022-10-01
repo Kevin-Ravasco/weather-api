@@ -8,7 +8,7 @@ class FetchWeatherData:
     """
     To handle the fetching of weather data from the external api
     """
-    def __int__(self, city: str, days: int = 1) -> None:
+    def __init__(self, city: str, days: int = 1) -> None:
         self.api_key = settings.WEATHER_API_KEY
         self.city = city
         self.days = days

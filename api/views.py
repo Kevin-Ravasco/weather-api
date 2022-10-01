@@ -18,9 +18,7 @@ class GetLocationWeatherAPIView(APIView):
     def get(self, *args, **kwargs):
         query_city = kwargs['city']
         query_days = self.request.GET.get('days', None)
-        weather_service = FetchWeatherData()
-        weather_service.city = query_city
-        weather_service.days = query_days
+        weather_service = FetchWeatherData(query_city, query_days)
         data = weather_service.get_weather_data()
         if data['status_code'] == 200:
             return Response(data['data'], status=status.HTTP_200_OK)
