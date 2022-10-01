@@ -143,7 +143,7 @@ class TestSetup(APITestCase):
         # set up unsuccessful mock
         cls.unsuccessful_mock = mock.Mock()
         cls.unsuccessful_expected_response_dict = {'error': {'message': 'Invalid city name'}, 'status_code': 400}
-        cls.unsuccessful_mock.json.return_value = cls.unsuccessful_expected_dict
+        cls.unsuccessful_mock.json.return_value = cls.unsuccessful_expected_response_dict
         cls.unsuccessful_mock.status_code = 400
 
         cls.weather_service = FetchWeatherData(cls.valid_city, cls.days)
