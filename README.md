@@ -90,6 +90,7 @@ weather-api/            <- project root
 │   └── wsgi.py
 ├── apps/
 │   └── __init__.py
+├── docs/
 ├── manage.py
 ├── README.md
 ├── .env
