@@ -121,11 +121,16 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny'
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
 }
 
 WEATHER_API_KEY = env('WEATHER_API_KEY')
 
 SWAGGER_SETTINGS = {
     "DEFAULT_MODEL_RENDERING": "example",
+    'USE_SESSION_AUTH': False  # to disable auth in swagger docs
 }

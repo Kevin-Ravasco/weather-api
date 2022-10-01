@@ -1,4 +1,5 @@
 ## Yoyo Group Weather API
+[![Django CI](https://github.com/Kevin-Ravasco/weather-api/actions/workflows/django.yml/badge.svg)](https://github.com/Kevin-Ravasco/weather-api/actions/workflows/django.yml) ![Alt text](./docs/coverage.svg)
 
 This project is the implementation for the interview project which addresses
 the following requirements:
@@ -115,5 +116,10 @@ Generate the coverage report by running:
 coverage html
 ```
 
-The test coverage is currently at 100%
+Generate an updated coverage badge:
+```shell
+coverage-badge -o docs/coverage.svg
+```
+
+![Alt text](./docs/coverage.svg)
 
