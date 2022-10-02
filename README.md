@@ -26,7 +26,7 @@ the following requirements:
 
 ### Notes
 
-The project has assumed an open api (no authentication needed) in order to interact
+The project has assumed a free public api approach (no authentication needed) in order to interact
 with the endpoints.
 
 The external api chosen weather api endpoint is [Weather Api](https://www.weatherapi.com/).
@@ -44,7 +44,7 @@ external api and no need for db/serializer operations
 
 ## Running The Project
 Create a `.env` file in the project root.
-Copy the contents of `.env.dist` into your `.env` file.
+Copy the contents of `.example.env` into your `.env` file.
 
 
 Create a virtual environment to install dependencies in and activate it:
@@ -99,7 +99,7 @@ weather-api/            <- project root
 └──  requirements.txt
 ```
 
-## Documentation
+## API Documentation
 The documentation for the api endpoints has been done using [swagger ui](https://swagger.io/tools/swagger-ui/)
 and redoc. The documentation can be found in the root path `/` and redoc in `/redoc`.
 
