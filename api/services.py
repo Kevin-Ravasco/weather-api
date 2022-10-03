@@ -61,6 +61,10 @@ class FetchWeatherData:
         return data
 
     def get_weather_data(self) -> dict:
+        """
+        Handles the calling of fetch api data, clean and compute temperature
+        to return our final data.
+        """
         status_code, response_data = self.fetch_api_weather_data()
         data = {'status_code': status_code}
         if status_code == 200:

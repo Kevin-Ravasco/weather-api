@@ -6,7 +6,7 @@ days_parameter = openapi.Parameter('days', openapi.IN_QUERY,
                                    description="Number of days",
                                    type=openapi.TYPE_NUMBER)
 
-# defining our responses schema
+# defining our responses schema for GetLocationWeatherAPIView
 response_schema_dict = {
     status.HTTP_200_OK: openapi.Response(
         description="successful request",
