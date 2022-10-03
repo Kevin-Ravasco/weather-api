@@ -24,7 +24,7 @@ class TestSetup(APITestCase):
         # set up successful mock request
         # this is the json received for city Nairobi, for 2 days in
         # an actual api call we use it as our expected dict
-        external_api_response_dict = {
+        cls.external_api_response_dict = {
             "location": {
                 "name": "Nairobi",
                 "region": "Nairobi Area",
@@ -128,7 +128,7 @@ class TestSetup(APITestCase):
             }
         }
         cls.successful_mock = mock.Mock()
-        cls.successful_mock.json.return_value = external_api_response_dict
+        cls.successful_mock.json.return_value = cls.external_api_response_dict
         cls.successful_mock.status_code = 200
 
         # our expected response after being computed should be this
