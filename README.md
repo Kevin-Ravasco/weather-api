@@ -1,5 +1,5 @@
 ## Yoyo Group Weather API
-[![Django CI](https://github.com/Kevin-Ravasco/weather-api/actions/workflows/django.yml/badge.svg)](https://github.com/Kevin-Ravasco/weather-api/actions/workflows/django.yml) ![Alt text](./docs/coverage.svg)
+[![Django CI](https://github.com/Kevin-Ravasco/weather-api/actions/workflows/django.yml/badge.svg)](https://github.com/Kevin-Ravasco/weather-api/actions/workflows/django.yml) ![Coverage Report](./docs/coverage.svg)
 
 This project is the implementation for the interview project which addresses
 the following requirements:
@@ -103,6 +103,8 @@ weather-api/            <- project root
 The documentation for the api endpoints has been done using [swagger ui](https://swagger.io/tools/swagger-ui/)
 and redoc. The documentation can be found in the root path `/` and redoc in `/redoc`.
 
+![Swagger Documentation Screenshot](./docs/screenshot_swagger.png)
+![Redoc Documentation Screenshot](./docs/screenshot_redoc.png)
 
 ## Testing
 Tests for the project have been written and are in `tests` module in the `api` app.
@@ -122,5 +124,5 @@ Generate an updated coverage badge:
 coverage-badge -o docs/coverage.svg
 ```
 
-![Alt text](./docs/coverage.svg)
+![Coverage report](./docs/coverage.svg)
 
